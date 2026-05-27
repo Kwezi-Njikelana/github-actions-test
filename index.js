@@ -7,6 +7,7 @@ app.use(express.json());
 
 const PORT = 8000;
 
+
 app.get("/", async (req, res) => {
     try{
             res.status(200).json({
