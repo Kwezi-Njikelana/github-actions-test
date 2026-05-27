@@ -1,6 +1,8 @@
 name: Build and Deploy
 
-on: push
+on: 
+  push:
+  pull_request:
 
 jobs:
   build:
@@ -14,9 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: Install dependencies
         run: npm install
+
+      - name: Run lint
+        run: npm run lint
 
       - name: Build app
         run: npm run build
